@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <title>{% block title %}ARCHIVE{% endblock %}</title>
+</head>
+<body class="base">
+    <div class="base">
+    <h1 class="base"><a class="base" href="{{ url_for('index') }}">ARCHIVE</a></h1>
+    <h2 class="base">
+        <a class="base" href="{{ url_for('genre') }}">Genre</a> |
+        {% if current_user.is_authenticated %}
+                <a class="base" href ="{{ url_for('profile') }}">Profile</a>
+                <a class="base" href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+        <a class="base" href="{{ url_for('login') }}">Login</a>
+        <a class="base" href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+    </h2>
+    </div>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+            <ul class="flashes">
+              {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+     </main>
+</body>
+</html>

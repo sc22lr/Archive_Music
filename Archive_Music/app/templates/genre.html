@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Genre{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+<h1>Genre</h1>
+<main>
+    <header>
+        <h1>Explore Genres</h1>
+    </header>
+    <div class="container">
+        {% for genre, songs in genres.items() %}
+        <div class="genre">
+            <h2>{{ genre | capitalize }}</h2>
+            {% for song in songs %}
+            <div class="songs">
+                <div class="song">
+                    <img src="{{ song.album_cover }}" alt="{{ song.name }}">
+                    <div class="song-info">
+                        <a href="{{ song.url }}" target="_blank">{{ song.name }}</a>
+                        <small>{{ song.artist }}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

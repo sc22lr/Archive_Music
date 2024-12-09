@@ -1,0 +1,256 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+h1 {
+    color: black;
+}
+h1.archive{
+    color: black;
+    text-align: center;
+}
+h2 {
+    color: #333;
+}
+main h3 {
+    font-size: 2rem;
+    margin-top: 15px;
+    color: black;
+}
+main h4 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: black;
+}
+ul {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+}
+li {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: lightgrey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li img {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+    border: 0.25px solid black;
+    align-items: center;
+}
+
+li a {
+    margin-left: auto;
+    border: 5px solid black;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+label {
+    font-weight: bold;
+    color: gray;
+}
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid grey;
+    outline: none;
+    transition: border-color 0.3s;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: black;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+input[type="submit"] {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+input[type="submit"]:hover {
+    background-color: gray;
+    color: white;
+}
+a {
+    border: 5px solid black;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 0.9em;
+}
+a:hover {
+    text-decoration: underline;
+}
+.login {
+    position:absolute;
+    bottom: 20px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+.submit-btn {
+    border: 5px solid black;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 0.9em;
+}
+.submit-btn:hover {
+    text-decoration: underline;
+    background-color: gray;
+    color: white;
+}
+.flashes ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+.flashes li {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+body.base div.base{
+    border: 1px solid black;
+    background-color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: top; 
+}
+body.base h1.base{
+    color: white;
+    display: inline-block;
+    font-size: 30px;
+}
+body.base h2.base{
+    color: white;
+    display: inline;
+    float: right;
+    font-size: 27.5px;
+}
+body.base a.base{
+    padding: 5px 10px;
+    text-align: center;
+    margin: 5px 10px;
+    font-size: 20px;
+    background-color: black;
+    color: whitesmoke;
+    text-decoration: none;
+    border: 5px solid black;
+}
+body.base a.base:hover{
+    background-color: red;
+    color: black;
+    transition: 0.4s;
+  }
+.container {
+    background-color: black;
+    margin: 20px auto;
+    max-width: 1400px;
+}
+.genre {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.genre h2 {
+    background-color: gray;
+    padding: 5px 10px;
+    margin: 0;
+    width: max-content;
+    border: 5px solid gray;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+.song {
+    display: flex;               
+    flex-direction: column;     
+    justify-content: center;     
+    align-items: center;         
+    height: 100vh;               
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 50px;
+}
+.song img {
+    width: 225px;
+    height: 225px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.song-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+}
+.song-info a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+}
+.song-info a:hover {
+    text-decoration: underline;
+}
+#suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0; 
+    width: 100%;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+a.playlist{
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+}

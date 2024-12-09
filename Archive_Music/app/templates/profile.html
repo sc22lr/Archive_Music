@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="{{ url_for('static', filename='form.js') }}"></script>
+<main>
+    <h1>Welcome, {{ name }}!</h1>
+    <h3>Your Playlists:</h3>
+    <ul>
+        {% for playlist in current_user.playlists %}
+            <li>
+                <a class="playlist" href="https://open.spotify.com/playlist/{{ playlist.spotify_id }}" target="_blank">
+                    {{ playlist.name }}
+                </a>
+            </li>
+        {% else %}
+            <p>You have no playlists yet. Create one!</p>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('create_playlist') }}">Create Playlist</a> | 
+    <a href="{{ url_for('logout') }}">Logout</a>
+</main>
+{% endblock %}

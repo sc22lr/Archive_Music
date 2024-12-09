@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Add songs to playlist{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="{{ url_for('static', filename='form.js') }}"></script>
+<main>
+    <h1>Add Song to Playlist: {{ playlist.name }}</h1>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="name">Add Song</label>
+            {{ form.song_query(size=40) }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+
+    <h3>Available Songs</h3>
+    <ul>
+        {% for track in tracks %}
+        <li>{{ track.name }} by {{ track.artists[0].name }}</li>
+        {% endfor %}
+    </ul>
+</main>
+{% endblock %}

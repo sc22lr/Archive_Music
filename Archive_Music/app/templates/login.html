@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+<script src="{{ url_for('static', filename='form.js') }}"></script>
+<main>
+    <h1>Login</h1>
+	<form method="POST" action="{{ url_for('login') }}">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="email">Email</label>
+            {{ form.email(required=True) }}
+        </div>
+        <div>
+            <label for="password">Password</label>
+            {{ form.password(required=True) }}
+        </div>
+        <div>
+            <input type="submit" value="Login">
+        </div>
+    </form>
+    <div class="login">
+        <a href="{{ url_for('change_password') }}">Forgot password?</a>
+		<a href="{{ url_for('spotify_login') }}">Login with Spotify</a>
+    </div>           
+</main>
+{% endblock %}

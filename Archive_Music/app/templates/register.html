@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="{{ url_for('static', filename='form.js') }}"></script>
+<main>
+    <h1>Register</h1>
+    <h2>Welcome, let's do this!</h2>
+
+	<form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+			<label>Email:</label><br>
+    		{{ form.email(required=True) }}
+		</div>
+        <div>
+			<label>Username:</label>
+    		{{ form.username(required=True) }}
+		</div>	
+		<div>
+			<label>Password:</label>
+    		{{ form.password(required=True) }}
+		</div>
+    	<div>
+			<label>Confirm Password:</label>
+    		{{ form.confirm_password(required=True) }}
+		</div>	
+		<div>
+			<input type="submit" value="Register">
+		</div>
+        </form>
+    <p>Have an account? <a href="{{ url_for('login') }}">Login Then!</a></p>
+</main>
+{% endblock %}
